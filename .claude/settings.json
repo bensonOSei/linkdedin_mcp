@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && uv run ruff check --fix --quiet src/ tests/ 2>/dev/null; uv run ruff format --quiet src/ tests/ 2>/dev/null; exit 0",
+            "timeout": 30,
+            "statusMessage": "Auto-formatting..."
+          }
+        ]
+      }
+    ]
+  }
+}
