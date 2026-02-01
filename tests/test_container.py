@@ -1,6 +1,5 @@
 """Tests for the dependency injection container."""
 
-from pathlib import Path
 from unittest.mock import patch
 
 from linkedin_mcp.application.use_cases.authenticate import AuthenticateUseCase
@@ -19,12 +18,8 @@ from linkedin_mcp.application.use_cases.suggest_hashtags import SuggestHashtagsU
 from linkedin_mcp.container import Container
 
 
-def test_container_wires_all_use_cases(tmp_path: Path) -> None:
+def test_container_wires_all_use_cases() -> None:
     """Container should instantiate all use cases."""
-    posts_path = tmp_path / "posts.json"
-    config_path = tmp_path / "config.json"
-    creds_path = tmp_path / "creds.json"
-
     with (
         patch("linkedin_mcp.container.JsonPostRepository") as mock_post_repo_cls,
         patch("linkedin_mcp.container.JsonConfigRepository") as mock_config_repo_cls,
