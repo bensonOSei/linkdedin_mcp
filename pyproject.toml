@@ -21,6 +21,7 @@ packages = ["src/linkedin_mcp"]
 
 [dependency-groups]
 dev = [
+    "black>=26.1",
     "mypy>=1.10",
     "ruff>=0.5",
     "pytest>=8.0",

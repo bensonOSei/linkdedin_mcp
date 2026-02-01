@@ -65,7 +65,7 @@ class LinkedInApiClient(LinkedInPublisher):
             "isReshareDisabledByAuthor": False,
         }
 
-        print(f"DEBUG: Full payload commentary: {payload['commentary'][:300]}...", file=sys.stderr)
+        print(f"DEBUG: Full payload commentary: {commentary[:300]}...", file=sys.stderr)
 
         # Log the request for debugging
         import json as json_lib
