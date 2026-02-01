@@ -129,7 +129,16 @@ class ContentOptimizer:
         if len(hook) <= 150:
             score += 10.0
 
-        power_words = ["learn", "discover", "secret", "mistake", "never", "always", "most", "why"]
+        power_words = [
+            "learn",
+            "discover",
+            "secret",
+            "mistake",
+            "never",
+            "always",
+            "most",
+            "why",
+        ]
         if any(word in hook.lower() for word in power_words):
             score += 15.0
 
@@ -148,7 +157,16 @@ class ContentOptimizer:
 
         score = 50.0
 
-        action_words = ["share", "comment", "follow", "save", "like", "tell", "drop", "thoughts"]
+        action_words = [
+            "share",
+            "comment",
+            "follow",
+            "save",
+            "like",
+            "tell",
+            "drop",
+            "thoughts",
+        ]
         if any(word in cta.lower() for word in action_words):
             score += 30.0
         else:

@@ -35,6 +35,9 @@ Domain layer NEVER imports from application or infrastructure.
 - Google-style docstrings
 - All use cases follow `class XxxUseCase` with `execute()` method pattern
 - MCP tools are thin adapters delegating to use cases
+- All imports MUST be at the top of the file — no inline or lazy imports. Ruff `E402` enforces this.
+- Tests MUST be procedural (plain functions), not class-based. No `class Test*` groupings.
+- All pytest fixtures MUST live in `conftest.py`, never in individual test files.
 
 ## Common Commands
 

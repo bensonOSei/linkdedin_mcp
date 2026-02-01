@@ -4,7 +4,9 @@ import fcntl
 import json
 from pathlib import Path
 
-from linkedin_mcp.domain.repositories.credentials_repository import CredentialsRepository
+from linkedin_mcp.domain.repositories.credentials_repository import (
+    CredentialsRepository,
+)
 from linkedin_mcp.domain.value_objects.linkedin_credentials import LinkedInCredentials
 
 _DEFAULT_STORAGE_DIR = Path.home() / ".linkedin-mcp"

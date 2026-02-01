@@ -4,14 +4,48 @@ from linkedin_mcp.domain.value_objects.hashtag import Hashtag
 
 _INDUSTRY_HASHTAGS: dict[str, list[str]] = {
     "technology": ["Technology", "Tech", "Innovation", "Digital", "Software"],
-    "marketing": ["Marketing", "DigitalMarketing", "ContentMarketing", "Branding", "SEO"],
-    "leadership": ["Leadership", "Management", "ExecutiveLeadership", "LeadershipDevelopment"],
-    "career": ["CareerDevelopment", "CareerGrowth", "JobSearch", "ProfessionalDevelopment"],
-    "startup": ["Startup", "Entrepreneurship", "StartupLife", "VentureCapital", "Founders"],
-    "ai": ["ArtificialIntelligence", "MachineLearning", "AI", "DeepLearning", "GenerativeAI"],
+    "marketing": [
+        "Marketing",
+        "DigitalMarketing",
+        "ContentMarketing",
+        "Branding",
+        "SEO",
+    ],
+    "leadership": [
+        "Leadership",
+        "Management",
+        "ExecutiveLeadership",
+        "LeadershipDevelopment",
+    ],
+    "career": [
+        "CareerDevelopment",
+        "CareerGrowth",
+        "JobSearch",
+        "ProfessionalDevelopment",
+    ],
+    "startup": [
+        "Startup",
+        "Entrepreneurship",
+        "StartupLife",
+        "VentureCapital",
+        "Founders",
+    ],
+    "ai": [
+        "ArtificialIntelligence",
+        "MachineLearning",
+        "AI",
+        "DeepLearning",
+        "GenerativeAI",
+    ],
     "finance": ["Finance", "FinTech", "Investment", "Banking", "FinancialServices"],
     "healthcare": ["Healthcare", "HealthTech", "DigitalHealth", "MedTech"],
-    "default": ["Business", "Innovation", "Growth", "Strategy", "ProfessionalDevelopment"],
+    "default": [
+        "Business",
+        "Innovation",
+        "Growth",
+        "Strategy",
+        "ProfessionalDevelopment",
+    ],
 }
 
 _TRENDING_HASHTAGS: list[str] = [

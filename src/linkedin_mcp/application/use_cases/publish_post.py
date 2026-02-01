@@ -1,7 +1,9 @@
 """Use case for publishing a post to LinkedIn."""
 
 from linkedin_mcp.application.dtos import PublishPostResult
-from linkedin_mcp.domain.repositories.credentials_repository import CredentialsRepository
+from linkedin_mcp.domain.repositories.credentials_repository import (
+    CredentialsRepository,
+)
 from linkedin_mcp.domain.repositories.post_repository import PostRepository
 from linkedin_mcp.domain.services.linkedin_publisher import LinkedInPublisher
 

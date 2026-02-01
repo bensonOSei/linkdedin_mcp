@@ -6,7 +6,9 @@ from urllib.parse import urlencode
 import httpx
 
 from linkedin_mcp.application.dtos import AuthResult
-from linkedin_mcp.domain.repositories.credentials_repository import CredentialsRepository
+from linkedin_mcp.domain.repositories.credentials_repository import (
+    CredentialsRepository,
+)
 from linkedin_mcp.domain.services.linkedin_publisher import LinkedInPublisher
 from linkedin_mcp.domain.value_objects.linkedin_credentials import LinkedInCredentials
 from linkedin_mcp.infrastructure.oauth_server import OAuthCallbackServer

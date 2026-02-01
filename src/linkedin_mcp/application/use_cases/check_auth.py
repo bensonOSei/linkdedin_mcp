@@ -1,7 +1,9 @@
 """Use case for checking LinkedIn authentication status."""
 
 from linkedin_mcp.application.dtos import AuthStatusResult
-from linkedin_mcp.domain.repositories.credentials_repository import CredentialsRepository
+from linkedin_mcp.domain.repositories.credentials_repository import (
+    CredentialsRepository,
+)
 
 
 class CheckAuthUseCase:

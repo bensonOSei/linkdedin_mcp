@@ -7,7 +7,9 @@ from linkedin_mcp.application.use_cases.draft_post import DraftPostUseCase
 from linkedin_mcp.application.use_cases.get_config import GetConfigUseCase
 from linkedin_mcp.application.use_cases.get_drafts import GetDraftsUseCase
 from linkedin_mcp.application.use_cases.get_optimal_time import GetOptimalTimeUseCase
-from linkedin_mcp.application.use_cases.get_scheduled_posts import GetScheduledPostsUseCase
+from linkedin_mcp.application.use_cases.get_scheduled_posts import (
+    GetScheduledPostsUseCase,
+)
 from linkedin_mcp.application.use_cases.optimize_post import OptimizePostUseCase
 from linkedin_mcp.application.use_cases.publish_post import PublishPostUseCase
 from linkedin_mcp.application.use_cases.schedule_post import SchedulePostUseCase
