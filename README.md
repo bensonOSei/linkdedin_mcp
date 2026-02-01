@@ -196,7 +196,7 @@ LinkedIn's REST Posts API (v202502) may truncate post content to approximately 1
 
 DDD layers with strict dependency rule: **Domain <- Application <- Infrastructure**
 
-```
+```text
 server.py          MCP tool handlers (thin adapters)
   -> container.py  Dependency wiring
     -> use cases   Orchestrate domain logic
@@ -225,4 +225,4 @@ uv run pytest                           # Run tests
 
 ## License
 
-MIT
+[MIT](LICENSE) - Copyright (c) 2026 [Benson Osei Mensah](https://bensonoseimensah.com)
