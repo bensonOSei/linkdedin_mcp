@@ -1,5 +1,6 @@
 """Tests for the OAuth callback server."""
 
+import contextlib
 import http.client
 
 import pytest
@@ -95,10 +96,8 @@ def test_start_twice_raises() -> None:
             server.start()
     finally:
         # Send a request to unblock the server thread
-        try:
+        with contextlib.suppress(Exception):
             _send_callback(port, "/callback?code=cleanup")
-        except Exception:
-            pass
         server.get_code(timeout=2)
 
 
