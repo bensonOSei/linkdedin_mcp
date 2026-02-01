@@ -3,6 +3,7 @@
 from datetime import datetime, timezone
 
 import httpx
+from loguru import logger
 
 from linkedin_mcp.domain.entities.post import Post
 from linkedin_mcp.domain.services.linkedin_publisher import LinkedInPublisher
@@ -37,12 +38,9 @@ class LinkedInApiClient(LinkedInPublisher):
         """
         commentary = self._build_commentary(post)
 
-        # Debug: log what we're about to send
-        import sys
-
-        print(f"DEBUG: Commentary length: {len(commentary)}", file=sys.stderr)
-        print(f"DEBUG: First 200 chars: {commentary[:200]}", file=sys.stderr)
-        print(f"DEBUG: Last 200 chars: {commentary[-200:]}", file=sys.stderr)
+        logger.debug("Commentary length: %d", len(commentary))
+        logger.debug("First 200 chars: %s", commentary[:200])
+        logger.debug("Last 200 chars: %s", commentary[-200:])
 
         if len(commentary) > _MAX_COMMENTARY_LENGTH:
             msg = (
@@ -65,23 +63,7 @@ class LinkedInApiClient(LinkedInPublisher):
             "isReshareDisabledByAuthor": False,
         }
 
-        print(f"DEBUG: Full payload commentary: {commentary[:300]}...", file=sys.stderr)
-
-        # Log the request for debugging
-        import json as json_lib
-        from pathlib import Path
-
-        debug_file = Path.home() / "linkedin_api_debug.json"
-        with debug_file.open("w") as f:
-            json_lib.dump(
-                {
-                    "commentary_length": len(commentary),
-                    "payload": payload,
-                    "timestamp": datetime.now(timezone.utc).isoformat(),
-                },
-                f,
-                indent=2,
-            )
+        logger.debug("Publishing post with commentary: %s", commentary[:300])
 
         response = httpx.post(
             _POSTS_URL,
@@ -90,12 +72,7 @@ class LinkedInApiClient(LinkedInPublisher):
             timeout=_TIMEOUT,
         )
 
-        # Log response for debugging
-        with debug_file.open("a") as f:
-            f.write("\n=== RESPONSE ===\n")
-            f.write(f"Status: {response.status_code}\n")
-            f.write(f"Headers: {dict(response.headers)}\n")
-            f.write(f"Body: {response.text}\n")
+        logger.debug("LinkedIn API response - Status: %d", response.status_code)
 
         if response.status_code != 201:
             msg = f"LinkedIn API error ({response.status_code}): {response.text}"

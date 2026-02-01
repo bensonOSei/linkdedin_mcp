@@ -3,6 +3,7 @@
 import os
 from datetime import datetime, timezone
 
+from loguru import logger
 from mcp.server.fastmcp import FastMCP
 
 from linkedin_mcp.container import Container
@@ -33,14 +34,12 @@ def draft_post(
     Returns:
         Post details including ID, content, and status.
     """
-    import sys
-
     if content:
-        print(f"DEBUG draft_post: Received content length: {len(content)}", file=sys.stderr)
-        print(f"DEBUG draft_post: First 200 chars: {content[:200]}", file=sys.stderr)
-        print(f"DEBUG draft_post: Last 200 chars: {content[-200:]}", file=sys.stderr)
+        logger.debug("draft_post: Received content length: %d", len(content))
+        logger.debug("draft_post: First 200 chars: %s", content[:200])
+        logger.debug("draft_post: Last 200 chars: %s", content[-200:])
     result = container.draft_post.execute(topic=topic, tone=tone, content=content)
-    print(f"DEBUG draft_post: Result body length: {len(result.content.body)}", file=sys.stderr)
+    logger.debug("draft_post: Result body length: %d", len(result.content.body))
     return result.model_dump()
 
 
