@@ -11,7 +11,7 @@ from linkedin_mcp.domain.value_objects.publish_result import PublishResult
 
 _POSTS_URL = "https://api.linkedin.com/rest/posts"
 _USERINFO_URL = "https://api.linkedin.com/v2/userinfo"
-_LINKEDIN_VERSION = "202502"
+_LINKEDIN_VERSION = "202611"
 _MAX_COMMENTARY_LENGTH = 3000
 _TIMEOUT = 30.0
 

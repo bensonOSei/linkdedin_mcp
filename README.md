@@ -5,7 +5,7 @@ An MCP server that helps draft, optimize, schedule, and publish LinkedIn posts p
 ## Features
 
 - **Draft posts** with structured hooks, body content, and calls to action across multiple tones
-- **Publish to LinkedIn** via OAuth2 authentication and LinkedIn REST API v202502
+- **Publish to LinkedIn** via OAuth2 authentication and LinkedIn REST API v202611
 - **Score engagement potential** with a multi-dimensional optimizer (length, readability, hook quality, hashtags, CTA)
 - **Suggest hashtags** categorized by industry, trending, niche, and broad reach
 - **Recommend posting times** based on LinkedIn algorithm research (Tue-Thu peak windows)
